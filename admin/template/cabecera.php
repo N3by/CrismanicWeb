@@ -1,3 +1,20 @@
+<?php
+
+session_start(); //isset es una forma de verificar, esto existe?
+  if(!isset($_SESSION['usuario'])){
+
+    header("Location:../index.php");
+  }else{
+    
+    if($_SESSION['usuario']=="ok"){
+      
+      $nombreUsuario = $_SESSION['nombreUsuario'];
+
+    }
+  }
+?>
+
+
 <!doctype html>
 <html lang="es">
   <head>
