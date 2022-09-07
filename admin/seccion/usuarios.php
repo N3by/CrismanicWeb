@@ -8,11 +8,11 @@ $userCity = (isset($_POST['userCity']))?$_POST['userCity']:"";
 $accionado = (isset($_POST['accionado']))?$_POST['accionado']:"";
 
 
-        echo $userID."<br/>";
-        echo $userName."<br/>";
-        echo $userPassw."<br/>";
-        echo $userCity."<br/>";
-        echo $accionado."<br/>";
+        // echo $userID."<br/>";
+        // echo $userName."<br/>";
+        // echo $userPassw."<br/>";
+        // echo $userCity."<br/>";
+        // echo $accionado."<br/>";
 
 
 
@@ -107,7 +107,8 @@ $listaUsuarios = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC) // Recupera los regis
 
         <tbody>
 
-        <?php foreach($listaUsuarios as $usuario)?>
+        <?php foreach($listaUsuarios as $usuario){ ?>
+
             <tr>
                 <td><?php echo $usuario['id']?></td>
                 <td><?php echo $usuario['user']?></td> <!-- lo que va dentro del $usuario ['aqui'] debe coincidir con el nombre la columna de la bd -->
@@ -125,6 +126,9 @@ $listaUsuarios = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC) // Recupera los regis
                 
                 </td>
             </tr>
+
+        <?php } ?>
+            
         </tbody>
     </table>
 </div>

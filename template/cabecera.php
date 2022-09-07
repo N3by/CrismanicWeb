@@ -26,6 +26,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="admin/index.php">Login</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin/seccion/registroUsuarios.php">SingUp</a>
+            </li>
         </ul>
     </nav>
 
