@@ -34,6 +34,7 @@ session_start(); //isset es una forma de verificar, esto existe?
           <a class="nav-item nav-link active" href="#">Administrador del sitio web</a>
           <a class="nav-item nav-link" href="<?php echo $url."/admin/inicio.php"?>">Inicio</a>
           <a class="nav-item nav-link" href="<?php echo $url."/admin/seccion/imagenes.php"?>">Administrador de Imagenes</a>
+          <a class="nav-item nav-link" href="<?php echo $url."/admin/seccion/registroUsuarios.php"?>">Creacion de usuarios</a>
           <a class="nav-item nav-link" href="<?php echo $url."/admin/seccion/cerrar.php"?>">Cerrar sesión</a>
           <a class="nav-item nav-link" href="<?php echo $url; ?>">Ver sitio web</a>
       </div>

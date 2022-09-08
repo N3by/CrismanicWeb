@@ -140,7 +140,7 @@ switch($accion){
 
         $sentenciaSQL = $conexion->prepare("DELETE FROM obras WHERE id = :id"); // esto es para mostrar/ traer los valores actuales y enviarselos a la parte de abajo (los td)
         $sentenciaSQL->bindParam(':id', $txtID);
-        $sentenciaSQL->execute();a
+        $sentenciaSQL->execute();
        // echo "Presionado botón Borrar";
 
        header("Location:imagenes.php");

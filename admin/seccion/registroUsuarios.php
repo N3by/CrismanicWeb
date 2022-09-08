@@ -14,7 +14,7 @@ $userDirr = (isset($_POST['userDirr']))?$_POST['userDirr']:"";
 $userPais = (isset($_POST['userPais']))?$_POST['userPais']:"";
 $userCity = (isset($_POST['userCity']))?$_POST['userCity']:"";
 $userRank = (isset($_POST['userRank']))?$_POST['userRank']:"";
-$userPlazo = (isset($_POST['userPlazo']))?$_POST['userPassw']:"";
+$userPlazo = (isset($_POST['userPlazo']))?$_POST['userPlazo']:"";
 $userPassw = (isset($_POST['userPassw']))?$_POST['userPassw']:"";
 $userPasswVery = (isset($_POST['userPasswVery']))?$_POST['userPasswVery']:"";
 $accionado = (isset($_POST['accionado']))?$_POST['accionado']:"";
@@ -33,47 +33,41 @@ include("../config/bd.php");
 
 switch($accionado){
 
-    case "agregar":
+  case "agregar":
 
-        //INSERT INTO `usuarios` (`id`, `user`, `pass`, `pais`) VALUES (NULL, 'Pedrito', 'arroz', 'Bogota');
+    //INSERT INTO `usuarios` (`id`, `user`, `pass`, `pais`) VALUES (NULL, 'Pedrito', 'arroz', 'Bogota');
 
-        //INSERT INTO usuarios (user_identidad, user_identidad_kind, user_nombre1, user_nombre2, user_apellido1, user_apellido2, user_mail, user_cel, user_dirr, user_pais, user_city, user_rank, user_plazo, user_pass, user_pass_very)
-        // VALUES (:userEnty, :userEntyKind, :userN1, :userN2, :userL1, :userL2, :userMail, :userC, :userDirec, :userPai, :userCit, :userRan, :userPla, :userPass, :userPassVer)
-       //$sentenciaSQL = $conexion->prepare("INSERT INTO usuarios (user, pass, pais) VALUES(:usuario, :passwr, :pais);");
-        $sentenciaSQL = $conexion->prepare("INSERT INTO usuarios (user_identidad, user_identidad_kind, user_nombre1, user_nombre2, user_apellido1, user_apellido2, user_mail, user_cel, user_dirr, user_pais, user_city, user_rank, user_plazo, user_pass, user_pass_very) VALUES(:userEnty, :userEntyKind, :userN1, :userN2, :userL1, :userL2, :userMail, :userC, :userDirec, :userPai, :userCit, :userRan, :userPla, :userPass, :userPassVer);");
-        $sentenciaSQL->bindParam(":userEnty",$userIdentidad);
-        $sentenciaSQL->bindParam(":userEntyKind",$userIdentidadKind);
-        $sentenciaSQL->bindParam(":userN1",$userNombre1);
-        $sentenciaSQL->bindParam(":userN2",$userNombre2);
-        $sentenciaSQL->bindParam(":userL1",$userApellido1);
-        $sentenciaSQL->bindParam(":userL2",$userApellido2);
-        $sentenciaSQL->bindParam(":userMail",$userMail);
-        $sentenciaSQL->bindParam(":userC",$userCel);
-        $sentenciaSQL->bindParam(":userDirec",$userDirr);
-        $sentenciaSQL->bindParam(":userPai",$userPais);
-        $sentenciaSQL->bindParam(":userCit",$userCity);
-        $sentenciaSQL->bindParam(":userRan",$userRank);
-        $sentenciaSQL->bindParam(":userPla",$userPlazo);
-        $sentenciaSQL->bindParam(":userPass",$userPassw);
-        $sentenciaSQL->bindParam(":userPassVer",$userPasswVery);
+    //INSERT INTO usuarios (user_identidad, user_identidad_kind, user_nombre1, user_nombre2, user_apellido1, user_apellido2, user_mail, user_cel, user_dirr, user_pais, user_city, user_rank, user_plazo, user_pass, user_pass_very)
+    // VALUES (:userEnty, :userEntyKind, :userN1, :userN2, :userL1, :userL2, :userMail, :userC, :userDirec, :userPai, :userCit, :userRan, :userPla, :userPass, :userPassVer)
+   //$sentenciaSQL = $conexion->prepare("INSERT INTO usuarios (user, pass, pais) VALUES(:usuario, :passwr, :pais);");
+    $sentenciaSQL = $conexion->prepare("INSERT INTO usuarios (user_identidad, user_identidad_kind, user_nombre1, user_nombre2, user_apellido1, user_apellido2, user_mail, user_cel, user_dirr, user_pais, user_city, user_rank, user_plazo, user_pass, user_pass_very) VALUES(:userEnty, :userEntyKind, :userN1, :userN2, :userL1, :userL2, :userMail, :userC, :userDirec, :userPai, :userCit, :userRan, :userPla, :userPass, :userPassVer);");
+    $sentenciaSQL->bindParam(":userEnty",$userIdentidad);
+    $sentenciaSQL->bindParam(":userEntyKind",$userIdentidadKind);
+    $sentenciaSQL->bindParam(":userN1",$userNombre1);
+    $sentenciaSQL->bindParam(":userN2",$userNombre2);
+    $sentenciaSQL->bindParam(":userL1",$userApellido1);
+    $sentenciaSQL->bindParam(":userL2",$userApellido2);
+    $sentenciaSQL->bindParam(":userMail",$userMail);
+    $sentenciaSQL->bindParam(":userC",$userCel);
+    $sentenciaSQL->bindParam(":userDirec",$userDirr);
+    $sentenciaSQL->bindParam(":userPai",$userPais);
+    $sentenciaSQL->bindParam(":userCit",$userCity);
+    $sentenciaSQL->bindParam(":userRan",$userRank);
+    $sentenciaSQL->bindParam(":userPla",$userPlazo);
+    $sentenciaSQL->bindParam(":userPass",$userPassw);
+    $sentenciaSQL->bindParam(":userPassVer",$userPasswVery);
 
-        $sentenciaSQL->execute();
+    $sentenciaSQL->execute();
 
-        echo "Presionado boton agregar";
+    echo "Presionado boton agregar";
 
+    echo '<script> alert("El registro fue exitoso")</script>';
 
-
-        break;
-
-    case "modificar":
-        echo "Presionado boton Modificar";
-        break;
-
-    case "cancelar":
-            echo "Presionado boton Cancelar";
-            break;
-
+    break;
+    
 }
+
+
 
 $sentenciaSQL = $conexion->prepare("SELECT * FROM usuarios");//ejecuta intruccion, para seleccionar usuarios
 $sentenciaSQL -> execute();//ejecuto instruccion
@@ -172,7 +166,7 @@ $listaUsuarios = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC) // Recupera los regis
                 </div>
 
                 <div class="form-group">
-                  <label for="userPlazo">Tipo de Usuario</label>
+                  <label for="userPlazo">Cantidad de plazos</label>
                   <select class="form-control" Required name="userPlazo" id="userPlazo">
                     <option>1 Plazo</option>
                     <option>3 Plazos</option>
