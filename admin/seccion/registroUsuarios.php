@@ -1,4 +1,4 @@
-<?php include("../template/cabecera.php"); ?>
+<?php include("../template/cabecera.php"); ?> 
 <?php
 
 $userID = (isset($_POST['userID']))?$_POST['userID']:"";// condicion ternaria la codicion, si se cumple y lo sucese di no se cumple
@@ -58,8 +58,6 @@ switch($accionado){
     $sentenciaSQL->bindParam(":userPassVer",$userPasswVery);
 
     $sentenciaSQL->execute();
-
-    echo "Presionado boton agregar";
 
     echo '<script> alert("El registro fue exitoso")</script>';
 

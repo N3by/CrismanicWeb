@@ -1,21 +1,21 @@
 <?php include ("template/cabecera.php")?>
 
-<?php
+<!-- <?php
 
-session_start(); //isset es una forma de verificar, esto existe?
-  if(!isset($_SESSION['usuario'])){
+// session_start(); //isset es una forma de verificar, esto existe?
+//   if(!isset($_SESSION['usuario'])){
 
-    header("Location:admin/seccion/registroUsuarios.php");
-  }else{
+//     header("Location:admin/seccion/registroUsuarios.php");
+//   }else{
     
-    if($_SESSION['usuario']=="ok"){
+//     if($_SESSION['usuario']=="ok"){
       
-      $nombreUsuario = $_SESSION['nombreUsuario'];
+//       $nombreUsuario = $_SESSION['nombreUsuario'];
 
-    }
-  }
+//     }
+//   }
 
-?>
+?> -->
 
 <?php 
 include("admin/config/bd.php"); // conectar a base de datos
